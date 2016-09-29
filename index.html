@@ -1,0 +1,190 @@
+﻿<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Survat Consultancy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+    <header role="banner">
+        <div class="hdr_cntnr">
+            <div class=""><a onClick="location.href='index.html'" class="logo">Suvrat <span>Consulting</span></a></div>
+            <span class="hamburg_menu"></span>
+            <nav>
+                <ul class="primry_menu" id="top-menu">
+                    <li><a href="#work" data-scroll="work">About Us</a>
+                    </li>
+                    <li><a href="#aboutus" data-scroll="whatwedo">What We Do</a>
+                    </li>
+                    <li><a href="Career.php" class="careers">Careers</a>
+                    <li><a href="#contact" data-scroll="contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+<div class="wrapper">
+        <section class="main_sctn">
+        <div class="blackoverlay"></div>
+        <video data-keepplaying id="videohome" preload="metadata" autoplay loop muted>
+            <source src="images/homescreencutcut.mp4" type="video/mp4">
+            <source src="/images/homescreencutcut.webm" type="video/webm">
+        </video>
+        <div class="content">
+            <h1 class="wow fadeInDown">The World Needs Software,we build it.</h1>
+            <h3>Best in class software development solutions from experts.</h3>
+
+        </div>s
+
+        <div class="arrowdown">
+            <div class="arrow bounce">
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="our_work" id="work">
+        <div class="sitesdone">
+            <div class="snap_wrapper snap_cont">
+                <ul>
+
+                    <li class="wrk wow fadeInLeft">
+                        <img src="images/people1.png" />
+                        <p>We are a Team of Experienced Software Development Professionals</p>
+                    </li>
+
+                    <li class="wrk wow fadeInRight">
+                        <img src="images/solv1.png" />
+                        <p>We are Passionate about solving Real World problems through software </p>
+                    </li>
+
+                    <li class="wrk wow fadeInLeft">
+                        <img src="images/bulb1.png" />
+                        <p>Our experience and skill sets span across multiple domains and technologies</p>
+                    </li>
+
+                    <li class="wrk wow fadeInRight">
+                        <img src="images/learn.png" />
+                        <p>And where there is a learning curve involved we perform even better </p>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <section class="whatwedo" id="aboutus">
+        <div class="blackoverlay"></div>
+        <div class="prncipl_wrpr">
+            <ul class="frst_icon">
+
+                <li class="lefticon">
+                    <img src="images/icn1.png" class="wow fadeInLeft" />
+                    <p class="wow fadeInLeft">
+                        We embrace challenges across the different sectors of the industry and come up with simple, effective and efficient solutions on time. 
+                    </p>
+                </li>
+
+                <li class="righticon">
+                    <img src="images/cmplx.png" class="wow fadeInRight" />
+                    <p class="wow fadeInRight">
+                        We leverage our experience and expertise to solve complex problems through proper analysis, planning, and execution.
+                    </p>
+                </li>
+                <li class="lefticon">
+                    <img src="images/icn3.png" class="wow fadeInLeft" />
+                    <p class="wow fadeInLeft">
+                        We help companies fulfill their skill gaps and support them throughout their product development lifecycle.
+                    </p>
+                </li>
+                <li class="righticon">
+                    <img src="images/icn2.png" class="wow fadeInRight" />
+                    <p class="wow fadeInRight">
+                        With us organisations can always feel relaxed while we build a solution for them.
+                    </p>
+                </li>
+                <li class="lefticon wow fadeInUp">
+                    <img src="images/webst.png" class="" />
+                    <p class="wow fadeInUp">
+                        We can design and build websites, mobile applications, RESTful APIs for web applications, custom built solutions for products of big companies and a lot more.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <section class="grow" id="contact">
+        <div class="wrapGrow wow fadeIn">
+            <h1>HAVE A PROJECT FOR US?</h1>
+            <h2>PLEASE FILL THE FORM BELOW AND WE WILL GET IN TOUCH</h2>
+            <form name="contactform" method="post" action="contact_form_mail.php">
+                <div class="wrapper">
+                    <input type="text" class="textbox wow fadeInLeft" name="first_name"placeholder="Name">
+                    <input type="text" class="textbox  wow fadeInRight" name="company" placeholder="Company">
+                    <input type="email" class="textbox  wow fadeInLeft" name="email_from"placeholder="Email">
+                    <input type="text" class="textbox phone wow wow fadeInRight" name="telephone" placeholder="Phone">
+                   
+
+                    <textarea type="text" class="textbox msgtext wow fadeIn" placeholder="Message" name="message"></textarea>
+
+                    <button type="submit" class="myButton wow fadeInUp">Submit</button><br>
+
+                </div>
+            </form>
+        </div>
+          <!--<h1 style="text-align: center;">OR</h1>
+           <p style="text-align: center;" class="contactus">Call us : +91 9975846199</p>-->
+           <!--  <p style="text-align: center;" class="contactus">  Email us :<a href="">emailaddress@gmail.com</a></p> -->
+    </section>
+</div>
+
+
+
+
+
+
+
+
+
+    <footer>
+        Copyright © 2016
+    </footer>
+
+
+    <script type="text/javascript" src="js/skrollr.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script type="text/javascript">
+        skrollr.init({});
+        new WOW().init();
+    </script>
+
+    <script>
+        $(window).on("scroll", function () {
+            if ($(window).scrollTop() > 50) {
+                $("header").addClass("nav1");
+            } else {
+                $("header").removeClass("nav1");
+            }
+        });
+
+    </script>
+</body>
+
+</html>
+
