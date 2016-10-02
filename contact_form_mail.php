@@ -7,7 +7,7 @@ $email = new PHPMailer();
 $email->IsSMTP();
 $email->CharSet = 'UTF-8';
 $email->Host       = "smtp.gmail.com"; // SMTP server
-$email->SMTPDebug  = 1;                     // enables SMTP debug information (for testing)
+//$email->SMTPDebug  = 1;                     // enables SMTP debug information (for testing)
 $email->SMTPAuth   = true;                  // enable SMTP authentication
 $email->Port       = 25;                    // set the SMTP port for the GMAIL server
 $email->Username   = "leads.suvrat@gmail.com"; // SMTP account username example
@@ -29,10 +29,10 @@ $mail_sent = $email->Send();
 
 if($mail_sent)
 {
-	return "Success";
+	echo "success";
 }
 else
 {
-	return "Failure";
+	echo "failure";
 }
 ?>

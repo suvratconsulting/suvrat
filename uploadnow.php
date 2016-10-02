@@ -25,7 +25,7 @@ $email = new PHPMailer();
 $email->IsSMTP();
 $email->CharSet = 'UTF-8';
 $email->Host       = "smtp.gmail.com"; // SMTP server
-$email->SMTPDebug  = 1;                     // enables SMTP debug information (for testing)
+//$email->SMTPDebug  = 1;                     // enables SMTP debug information (for testing)
 $email->SMTPAuth   = true;                  // enable SMTP authentication
 $email->Port       = 25;                    // set the SMTP port for the GMAIL server
 $email->Username   = "careers.suvrat@gmail.com"; // SMTP account username example
@@ -33,7 +33,7 @@ $email->Password   = "\$consulting@suvrat\$";        // SMTP account password ex
 
 $email->From      = 'careers.suvrat@gmail.com';
 $email->FromName  = 'Careers At Suvrat Consulting';
-$email->Subject   = 'New Candidate Resume';
+$email->Subject   = 'New Candidate Resume for '.$_POST['position'];
 $email->Body      = $content;
 $email->AddAddress( 'careers.suvrat@gmail.com' );
 
@@ -41,9 +41,6 @@ if (!empty($_FILES)) {
 	$file_path = $_FILES['file']['tmp_name'];
 	$file_name = $_FILES['file']['name'];
 }
-/*else{
-	return "Please attach a your resume before submitting";
-}*/
 
 $email->AddAttachment( $file_path, $file_name);
 
@@ -51,12 +48,10 @@ $mail_sent = $email->Send();
 
 if($mail_sent)
 {
-	$response_array['status'] = 'success';    
+	echo "success";
 }
 else
 {
-	$response_array['status'] = 'failure';    
+    echo "failure";
 }
-header('Content-type: application/json');
-echo json_encode($response_array);
 ?>

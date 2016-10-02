@@ -42,6 +42,16 @@
     </script>
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    <script type="text/javascript">
+        function setCookie(key, value) {
+            document.cookie = key + '=' + value;
+        }
+
+        function getCookie(key) {
+            var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+            return keyValue ? keyValue[2] : null;
+        }
+    </script>
 </head>
 <body>
     
@@ -72,6 +82,7 @@
           </a>
         </div>
     </section>
+
     <section class="career" id="hiring">
         <div class="career-wrap">
             <h1 class="wow fadeInUp">WE'RE HIRING</h1>
@@ -92,9 +103,8 @@
                 <input type="submit" value="Send File" class="apply"/> -->
                 <div class="carrerwrapper">
                     <form id="careersForm" action="uploadnow.php" class="dropzone" value="Computer">
-			<p id="successMsg" style="display:none">Thank You for submitting your resume.We will review it and get in touch with you shortly in case we find it matching our requirements<p>
-			<p id="errorMsg" style="display:none">An error occured while submitting your resume.Please try again later<p>
-                        <input type="submit" value="Send File" class="apply"/>
+			            <p id="successMsg" style="display:none">Thank You for submitting your resume.We will review it and get in touch with you shortly in case we find it matching our requirements<p>
+			            <p id="errorMsg" style="display:none">An error occured while submitting your resume.Please try again later<p>
                     </form>
                 </div>
 
@@ -102,36 +112,39 @@
 
     </section>
 
-	<script>
-		$('#careersForm').submit(function(){
-    		$.ajax(
-			{
-      				url: $('#careersForm').attr('action'),
-      				type: 'POST',
-      				data : $('#careersForm').serialize(),
-      				success: function(data)
-				{
-					if(data.status == 'success')
-					{
-						$('#successMsg').show();
-		        			console.log('form submitted.');
-					}
-					else if(data.status == 'error')
-					{
-						$('#successMsg').show();
-		        			console.log('form submitted.');
-					}
-      				},
-				error: function (data)
-				{
-        				$('#errorMsg').show();
-		        		console.log('Error occured.');
-        			}
-    			}
-		);
-    		return false;
-	 });
-	</script>
+    <script type="text/javascript">
+        Dropzone.options.careersForm = {
+            paramName: 'file',
+            maxFilesize: 1, // MB
+            maxFiles: 1,
+            init: function() {
+                this.on('success', function( file, resp ){
+                    console.log(resp);
+                    if(resp.localeCompare("success"))
+                    {
+                        $('#successMsg').show();
+                        console.log('form submitted.');
+                    }
+                    else
+                    {
+                        $('#errorMsg').show();
+                        console.log('Error occured.');
+                    }
+                });
+                this.on('error',function(file,errorMessage){
+                    alert(errorMessage);
+                    this.removeFile(file);
+                });
+                this.on("maxfilesexceeded", function(file){
+                    this.removeFile(file);
+                    alert("You cannot upload more than one files!!");
+                });
+                this.on('sending', function(file, xhr, formData){
+                    formData.append('position', getCookie('position'));
+                });
+            }
+        };
+    </script>
 
     <section class="career position">
         <div class="career-wrap" id="carrreeerrr">
@@ -158,28 +171,28 @@
                 <div class="frontend commonclass wow fadeInUp">
                     <div class="jobtitle">
                        <span>Frontend developer</span>
-                       <!--   <form enctype="multipart/form-data" action="mail.php" method="POST">
-                        <input name="userfile" type="file" />
-                        <input type="submit" value="Apply" class="apply"/>
-                    </form> -->
-                    <a href="#hiring" class="hiringgg">Apply</a>
+                    <a id="fd" href="#hiring" class="hiringgg">Apply</a>
                     </div>
                     <div class="clearboth"></div>
                     <div class="jobdesc">
                         <ul>
                      
                             <li>Excellent CSS and HTML Skills</li>
-<li>Experience with jQuery and javascript</li>
-<li>Experience with Responsive Design</li>
-<li>Experience with CSS frameworks like Bootstrap and Zurb</li>
-<li>Experience with CSS preprocessors like SASS , LESS , Stylus etc.</li>
-<li>Experience with cross browser issues</li>
-<li>Very high attention to detail</li>
-<li>Excellent communications skills</li>
-<li>Experience with Illustration tools like Adobe CS</li>
-<li>Experience with source code management tools like git</li>
-<li>(Optional) Experience with Javascript frameworks like Angular, backbone etc</li>
-<li>(Optional) Experience with visual and interaction design</li>
+                            <li>Ability to convert Photoshop designs to HTML and CSS pages</li>
+                            <li>Ability to build cross-browser and cross-device web pages</li>
+                            <li>Ability to buid web pages for varying screen sizes</li>
+                            <li>Experience with jQuery and javascript</li>
+                            <li>Experience with Responsive Design</li>
+                            <li>Experience with CSS frameworks like Bootstrap and Zurb</li>
+                            <li>Experience with CSS preprocessors like SASS , LESS , Stylus etc.</li>
+                            <li>Experience with cross browser issues</li>
+                            <li>Very high attention to detail</li>
+                            <li>Excellent communications skills</li>
+                            <li>Experience with Illustration tools like Adobe CS</li>
+                            <li>Experience with source code management tools like git</li>
+                            <li>Should have a good design sense also</li>
+                            <li>(Optional) Experience with Javascript frameworks like Angular, backbone etc</li>
+                            <li>(Optional) Experience with visual and interaction design</li>
                         </ul>
                     </div>
                 </div>
@@ -187,6 +200,11 @@
         </div>
     </section>
 
+    <script>
+        $( "#fd" ).click(function() {
+            setCookie('position','Frontend developer');
+        });
+    </script>
     <footer>
         Copyright©2016
     </footer>
