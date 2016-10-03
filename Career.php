@@ -103,9 +103,11 @@
                 <input type="submit" value="Send File" class="apply"/> -->
                 <div class="carrerwrapper">
                     <form id="careersForm" action="uploadnow.php" class="dropzone" value="Computer">
+                        <div id="loadingDiv"></div>
 			            <p id="successMsg" style="display:none">Thank You for submitting your resume.We will review it and get in touch with you shortly in case we find it matching our requirements<p>
 			            <p id="errorMsg" style="display:none">An error occured while submitting your resume.Please try again later<p>
                     </form>
+
                 </div>
 
         </div>
@@ -113,11 +115,24 @@
     </section>
 
     <script type="text/javascript">
+    $(document).ready(function(){
+        var $loading = $('#loadingDiv');
+        $loading.hide();
+        // $loading.ajaxStart(function() {
+        //     $(this).show();
+        // }).ajaxComplete(function() {
+        //     $(this).hide();
+        // });
+    });
+    
         Dropzone.options.careersForm = {
             paramName: 'file',
             maxFilesize: 1, // MB
             maxFiles: 1,
             init: function() {
+                this.on('addedfile', function(){
+                    $('#loadingDiv').show();
+                }),
                 this.on('success', function( file, resp ){
                     console.log(resp);
                     if(resp.localeCompare("success"))
@@ -130,6 +145,8 @@
                         $('#errorMsg').show();
                         console.log('Error occured.');
                     }
+                    $('#loadingDiv').hide();
+
                 });
                 this.on('error',function(file,errorMessage){
                     alert(errorMessage);
@@ -147,6 +164,7 @@
     </script>
 
     <section class="career position">
+       
         <div class="career-wrap" id="carrreeerrr">
 
         <h1 class=" wow fadeInUp">OPEN POSITIONS</h1>

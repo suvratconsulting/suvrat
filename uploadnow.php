@@ -35,7 +35,7 @@ $email->From      = 'careers.suvrat@gmail.com';
 $email->FromName  = 'Careers At Suvrat Consulting';
 $email->Subject   = 'New Candidate Resume for '.$_POST['position'];
 $email->Body      = $content;
-$email->AddAddress( 'careers.suvrat@gmail.com' );
+$email->AddAddress( 'dpdeveshpal9@gmail.com' );
 
 if (!empty($_FILES)) {
 	$file_path = $_FILES['file']['tmp_name'];

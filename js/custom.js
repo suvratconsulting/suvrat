@@ -1,7 +1,13 @@
 $(document).ready(function () {
 
+ 
+// $loading.ajaxStart(function () {
+//     $loading.show();
+//   }).ajaxStop(function () {
+//     $loading.hide();
+//   });
 
-
+  // $("#loadingDiv").hide();
 	var heightwin = $(window).innerHeight();
 	$(".main_sctn").css("height",heightwin);
 
