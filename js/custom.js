@@ -15,16 +15,36 @@ $(document).ready(function () {
 	  $(this).parent().siblings(".jobdesc").slideToggle();
 	});
 
-	$('nav li a,.btn-oval').click(function (e) {
-		// e.preventDefault();
-		$('html, body').animate({
-			scrollTop: $($(this.hash)).offset().top - 82
-		}, 1000);
-		if ($(window).width() < 768) {
-			$('.hdr_cntnr nav').slideToggle();
-			$('.hamburg_menu').toggleClass("active");
-		}
-	});
+	// $('nav li a,.btn-oval').click(function (e) {
+	// 	// e.preventDefault();
+	// 	$('html, body').animate({
+	// 		scrollTop: $($(this.hash)).offset().top - 100
+	// 	}, 1000);
+	// 	if ($(window).width() < 768) {
+	// 		$('.hdr_cntnr nav').slideToggle();
+	// 		$('.hamburg_menu').toggleClass("active");
+	// 	}
+	// });
+  $("nav li a,.btn-oval").on('click', 'a[href^="#"]', function(e) {
+    // target element id
+      var id = $(this).attr('href');
+
+      // target element
+      var $id = $(id);
+      if ($id.length === 0) {
+          return;
+      }
+
+      // prevent standard hash navigation (avoid blinking in IE)
+      e.preventDefault();
+
+      // top position relative to the document
+      var pos = $(id).offset().top - 60;
+
+      // animated top scrolling
+      $('body, html').animate({scrollTop: pos});
+
+  });
 
 
 	$('.logo').click(function() {

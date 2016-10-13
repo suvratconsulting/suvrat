@@ -103,7 +103,7 @@
                 <input type="submit" value="Send File" class="apply"/> -->
                 <div class="carrerwrapper">
                     <form id="careersForm" action="uploadnow.php" class="dropzone" value="Computer">
-                        <div id="loadingDiv"></div>
+                        <div id="loadingDiv"><i class="loadinggif"></i></div>
 			            <p id="successMsg" style="display:none">Thank You for submitting your resume.We will review it and get in touch with you shortly in case we find it matching our requirements<p>
 			            <p id="errorMsg" style="display:none">An error occured while submitting your resume.Please try again later<p>
                     </form>

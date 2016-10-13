@@ -18,7 +18,7 @@ $email->FromName  = $_POST['first_name'];
 $email->Subject   = $_POST['company'];
 $content = $_POST['message'] .PHP_EOL.'Phone Number: '. $_POST['telephone'].PHP_EOL.'Email: '.$_POST['email_from'];
 $email->Body      = $content;
-$email->AddAddress( 'leads.suvrat@gmail.com' );
+$email->AddAddress( 'yvgoyal92@gmail.com' );
 
 /*$file_path = $_FILES['userfile']['tmp_name'];
 $file_name = $_FILES['userfile']['name'];

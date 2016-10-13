@@ -30,7 +30,13 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'HelveticaNeue-Bold';
+    src: url('../fonts/HelveticaNeue-Bold.eot');
+    src: url('../fonts/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeue-Bold.woff') format('woff'), url('../fonts/HelveticaNeue-Bold.ttf') format('truetype'), url('../fonts/HelveticaNeue-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 @font-face {
@@ -4217,7 +4223,7 @@ a{
     text-align: center;
     padding-top: 70px;
     position: relative;
-    background-color: #fff;
+    background-color: #fafafa;
     padding-bottom: 70px
 }
 
@@ -4251,6 +4257,7 @@ a{
 
 .main_sctn h1{
     font-size: 48px;
+        font-family: 'HelveticaNeue-Bold';
 }
 
 .main_sctn h3{
@@ -4283,7 +4290,7 @@ a{
 }
 
 .nav1 {
-    background: rgba(69,147,227,0.9);
+    background: rgba(69,147,227,1);
     width: 100%;
 }
 .textbox:nth-child(even){
@@ -4595,8 +4602,22 @@ body.page-template-homenew .startbuild {
     margin-top: 15px; 
 }
 
+.loadinggif{
+    background: url(../images/loadinggiphy.gif) no-repeat;
+    width: 65px;
+    height: 40px;
+    display: block;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+}
+
 #loadingDiv{
-    background: url(../images/loading2.gif) no-repeat;
+    background: rgba(0,0,0,0.5);
     display: block;
     width: 70px;
     height: 70px;
@@ -4604,9 +4625,15 @@ body.page-template-homenew .startbuild {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -35px;
-    margin-top: -35px;
+    /* margin-left: -35px; */
+    /* margin-top: -35px; */
     z-index: 11;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    z-index: 111;
 }
 
 
