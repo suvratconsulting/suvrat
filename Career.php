@@ -151,10 +151,12 @@
                 this.on('error',function(file,errorMessage){
                     alert(errorMessage);
                     this.removeFile(file);
+                    $('#loadingDiv').hide();
                 });
                 this.on("maxfilesexceeded", function(file){
                     this.removeFile(file);
                     alert("You cannot upload more than one files!!");
+                    $('#loadingDiv').hide();
                 });
                 this.on('sending', function(file, xhr, formData){
                     formData.append('position', getCookie('position'));
