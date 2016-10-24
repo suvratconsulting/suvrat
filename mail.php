@@ -18,7 +18,7 @@ $email->From      = 'careers.suvrat@gmail.com';
 $email->FromName  = 'Careers At Suvrat Consulting';
 $email->Subject   = 'New Candidate Resume';
 $email->Body      = $content;
-$email->AddAddress( 'yvgoyal92@gmail.com' );
+$email->AddAddress( 'freeridelelo@gmail.com' );
 
 $file_path = $_FILES['userfile']['tmp_name'];
 $file_name = $_FILES['userfile']['name'];

@@ -94,13 +94,15 @@
                     <!--<p>Get in touch</p>-->
                     
                 </div>
-<!-- <form action="/upload-target" class="dropzone dz-clickable"><div class="dz-default dz-message"><span>Drop files here to upload</span></div></form>
-            <form enctype="multipart/form-data" action="mail.php" method="POST">
-                <span class="uploadit">
-                    Send this file: <br><br><input name="userfile" type="file" />
-                </span>
-               
-                <input type="submit" value="Send File" class="apply"/> -->
+                <form enctype="multipart/form-data" action="mail.php" method="POST">
+                    <div class="fileUpload btn btn-primary">
+                        <span>Upload</span>
+                        <input type="file" class="upload" />
+                    </div>
+                </form>
+
+ 
+
                 <div class="carrerwrapper">
                     <form id="careersForm" action="uploadnow.php" class="dropzone" value="Computer">
                         <div id="loadingDiv"><i class="loadinggif"></i></div>

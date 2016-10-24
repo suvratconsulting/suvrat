@@ -15,7 +15,7 @@
     font-weight: normal;
     font-style: normal;
 }
-.svg
+
 @font-face {
     font-family: 'SourceSansPro-Semibold';
     src: url('../fonts/SourceSansPro-Semibold.eot');
@@ -4603,9 +4603,9 @@ body.page-template-homenew .startbuild {
 }
 
 .loadinggif{
-    background: url(../images/loadinggiphy.gif) no-repeat;
-    width: 65px;
-    height: 40px;
+    background: url(../images/loadingnew.gif) no-repeat;
+    width: 110px;
+    height: 110px;
     display: block;
     background-position: center;
     position: absolute;
@@ -4764,6 +4764,9 @@ body.page-template-homenew .startbuild {
         left: 0;
     }
 }
+.fileUpload{
+    display: none;
+}
 @media (max-width: 1024px){
     .frst_icon {
         list-style: none;
@@ -4782,13 +4785,19 @@ body.page-template-homenew .startbuild {
 
 
 @media (max-width: 767px) {
+    .fileUpload{
+        display: block;
+    }
     .main_sctn video{
         display: none;
     }
     .main_sctn{
-        background: url(../images/mobile-bg.png) no-repeat;
+        background: url(../images/world.jpg) no-repeat;
         background-position: center;
         background-size: cover;
+    }
+    .blackoverlay{
+        background: rgba(0,0,0,0.6);
     }
     .career-wrap{
         padding-bottom: 10px;
@@ -4806,9 +4815,36 @@ body.page-template-homenew .startbuild {
     .main_sctn h3 {
         font-size: 18px;
     }
-    .main_sctn h1 {
-        font-size: 36px;
-    }
+ .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+ .fileUpload span{
+        padding: 5px 23px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4593e3;
+        /*display: inline-block;*/
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.main_sctn h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
     .deliver {
         height: 238px;
         padding-top: 226px;
@@ -4817,11 +4853,18 @@ body.page-template-homenew .startbuild {
         font-size: 36px;
     }
     .career-wrap .apply {
-         margin-top: 0; 
-        padding: 8px;
+        margin-top: 20px;
+        padding: 5px 23px;
+        font-size: 18px;
+        border: 0;
+        box-shadow: none;
+        font-family: 'SourceSansPro-Regular';
     }
     .single-job-component .content {
         border-right: none;
+    }
+    .thrdcontnt{
+        font-weight: normal;
     }
 
     .filter-view .filter ul li {
@@ -4886,6 +4929,7 @@ body.page-template-homenew .startbuild {
   }
   .whatwedo {
       padding: 50px 20px;
+      background-position: center;
   }
   .our_work {
     width: 100%;
