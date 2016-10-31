@@ -132,8 +132,11 @@
         <div class="wrapGrow wow fadeIn">
             <h1>HAVE A PROJECT FOR US?</h1>
             <h2>PLEASE FILL THE FORM BELOW AND WE WILL GET IN TOUCH</h2>
-            <form id="contactform" method="post" action="contact_form_mail.php">
+            <form id="contactform z" method="post" action="contact_form_mail.php">
+
                 <div class="wrapper">
+                    <div id="loadingDiv"><i class="loadinggif"></i></div>
+                    <!-- <div class="toshowcheck">check text</div> -->
                     <input type="text" class="textbox wow fadeInLeft" name="first_name"placeholder="Name">
                     <input type="text" class="textbox  wow fadeInRight" name="company" placeholder="Company">
                     <input type="email" class="textbox  wow fadeInLeft" name="email_from"placeholder="Email">
@@ -150,6 +153,7 @@
                 </div>
             </form>
             <script>
+            $("#loadingDiv").hide();
                 $('#contactform').submit(function(){
                     console.log("IN");
                     $.ajax({
@@ -162,11 +166,13 @@
                             {
                                 $('#successMsg').show();
                                 console.log('form submitted.');
+                                $("#loadingDiv").hide();
                             }
                             else
                             {
                                 $('#errorMsg').show();
                                 console.log('Error occured.');
+                                $("#loadingDiv").show();
                             }
                         },
                         error: function (resp){

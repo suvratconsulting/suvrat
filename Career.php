@@ -98,6 +98,9 @@
                     <div class="fileUpload btn btn-primary">
                         <span>Upload</span>
                         <input type="file" class="upload" />
+                        <button type="submit" class="sendmob">Send</button>
+                        <p id="successMsg" style="display:none">Thank You for submitting your resume.We will review it and get in touch with you shortly in case we find it matching our requirements<p>
+                        <p id="errorMsg" style="display:none">An error occured while submitting your resume.Please try again later<p>
                     </div>
                 </form>
 

@@ -4361,6 +4361,7 @@ a{
     z-index: 11;
     position: relative;
     font-size: 18px;
+    margin-top: 20px;
 }
 
 footer {
@@ -4644,13 +4645,17 @@ body.page-template-homenew .startbuild {
     font-size: 15px;
 }
 
-#successMsg{
-        position: absolute;
-    bottom: -44px;
+#successMsg,#errorMsg{
+    position: absolute;
+    bottom: 1px;
     color: green;
-    font-size: 15px;
+    font-size: 11px;
+    text-align: center;
+    width: 687px;
 }
-
+.fileUpload{
+    display: none;
+}
 /*-------------Resposive-----------------*/
 @media screen and (max-width: 1300px) {
     .hdr_cntnr {
@@ -4764,9 +4769,7 @@ body.page-template-homenew .startbuild {
         left: 0;
     }
 }
-.fileUpload{
-    display: none;
-}
+
 @media (max-width: 1024px){
     .frst_icon {
         list-style: none;
@@ -4785,6 +4788,19 @@ body.page-template-homenew .startbuild {
 
 
 @media (max-width: 767px) {
+    .sendmob{
+        display: block;
+        margin: 25px auto 0;
+        padding: 5px 23px;
+        font-size: 18px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #4593e3;
+        border: 0;
+        font-family: 'SourceSansPro-Regular';
+    }
     .fileUpload{
         display: block;
     }
@@ -4889,8 +4905,16 @@ body.page-template-homenew .startbuild {
   }
   .myButton {
         display: block;
-        margin: 0 auto;
+        margin: 30px auto 0;
     }
+    #successMsg, #errorMsg {
+    position: absolute;
+    bottom: 45px;
+    color: green;
+    font-size: 11px;
+    text-align: center;
+    width: 100%;
+}
   .prncipl_wrpr .lefticon,.prncipl_wrpr .righticon{ 
     width: 80%;
     float: none;

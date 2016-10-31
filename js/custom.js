@@ -7,7 +7,7 @@ $(document).ready(function () {
 //     $loading.hide();
 //   });
 
-  // $("#loadingDiv").hide();
+//   $("#loadingDiv").hide();
 	var heightwin = $(window).innerHeight();
 	$(".main_sctn").css("height",heightwin);
 
