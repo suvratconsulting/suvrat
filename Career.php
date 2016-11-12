@@ -94,10 +94,10 @@
                     <!--<p>Get in touch</p>-->
                     
                 </div>
-                <form enctype="multipart/form-data" action="mail.php" method="POST">
+                <form id="careersmobile" enctype="multipart/form-data" action="mail.php" method="POST" enctype="multipart/form-data">
                     <div class="fileUpload btn btn-primary">
                         <span>Upload</span>
-                        <input type="file" class="upload" />
+                        <input type="file" class="upload" name="file" />
                         <button type="submit" class="sendmob">Send</button>
                         <p id="successMsg" style="display:none">Thank You for submitting your resume.We will review it and get in touch with you shortly in case we find it matching our requirements<p>
                         <p id="errorMsg" style="display:none">An error occured while submitting your resume.Please try again later<p>
@@ -120,6 +120,55 @@
     </section>
 
     <script type="text/javascript">
+
+    $(function () {
+
+        $('#careersmobile').on('submit', function (e) {
+
+            e.preventDefault();
+
+            var formData = new FormData($(this)[0]);
+
+            console.log(formData);
+
+            // setup some local variables
+            var $form = $(this);
+
+            // Serialize the data in the form
+            var serializedData = $form.serialize();
+
+            $.ajax({
+                type: 'post',
+                url: 'mail.php',
+                data: formData,
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(resp){
+                    console.log(resp);
+                    if(resp.localeCompare("success"))
+                    {
+                        $('#successMsg').show();
+                        console.log('form submitted.');
+                        $("#loadingDiv").hide();
+                    }
+                    else
+                    {
+                        $('#errorMsg').show();
+                        console.log('Error occured.');
+                        $("#loadingDiv").hide();
+                    }
+                },
+                error: function (resp){
+                    $('#errorMsg').show();
+                }
+            });
+
+        });
+
+    });
+
     $(document).ready(function(){
         var $loading = $('#loadingDiv');
         $loading.hide();

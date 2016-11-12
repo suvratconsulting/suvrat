@@ -132,7 +132,7 @@
         <div class="wrapGrow wow fadeIn">
             <h1>HAVE A PROJECT FOR US?</h1>
             <h2>PLEASE FILL THE FORM BELOW AND WE WILL GET IN TOUCH</h2>
-            <form id="contactform z" method="post" action="contact_form_mail.php">
+            <form id="contactform" method="post" action="contact_form_mail.php">
 
                 <div class="wrapper">
                     <div id="loadingDiv"><i class="loadinggif"></i></div>
@@ -172,7 +172,7 @@
                             {
                                 $('#errorMsg').show();
                                 console.log('Error occured.');
-                                $("#loadingDiv").show();
+                                $("#loadingDiv").hide();
                             }
                         },
                         error: function (resp){
