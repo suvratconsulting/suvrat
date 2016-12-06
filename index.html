@@ -156,6 +156,7 @@
             $("#loadingDiv").hide();
                 $('#contactform').submit(function(){
                     console.log("IN");
+                    $("#loadingDiv").show();
                     $.ajax({
                         url: $('#contactform').attr('action'),
                         type: 'POST',
